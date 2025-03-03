@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JDK, JRE, JVM의 관계.md",
+                "file": "JDK, JRE, JVM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JDK, JRE, JVM의 관계"
+              "title": "JDK, JRE, JVM"
             }
           }
         ]
@@ -172,6 +172,6 @@
   "active": "fca766107b0458e4",
   "lastOpenFiles": [
     "create a link.md",
-    "JDK, JRE, JVM의 관계.md"
+    "JDK, JRE, JVM.md"
   ]
 }
