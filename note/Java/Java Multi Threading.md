@@ -51,9 +51,10 @@
 
 ---
 
-## Multi-Thread in Java
+## 2. Multi-Thread in Java
 
-#### Thread 생성 : Thread 클래스로부터 직접 생성
+### 2.1 Thread 생성
+#### 2.1.1 Thread 생성 : Thread 클래스로부터 직접 생성
 
 `new`를 통해 Thread 클래스 객체를 생성 후 `start` 메서드를 통해 **다른 스레드에서 할 작업을 할당**하는 방법입니다. Thread객체를 생성할 때는 `Runnable 인터페이스를 구현한 클래스 객체`를 **매개변수**로 받습니다.
 
@@ -118,7 +119,7 @@ class MyTask implements Runnable {
 >```
 
 
-#### Thread 생성 : Thread 하위 클래스로부터 직접 생성
+#### 2.1.2 Thread 생성 : Thread 하위 클래스로부터 직접 생성
 
 ```java
 public static void main(String args[]){
@@ -156,7 +157,7 @@ public class CustomThread extends Thread {
 }
 ```
 
-#### 데몬 스레드
+#### 2.1.3 데몬 스레드
 
 데몬 스레드는 메인 스레드의 작업을 돕는 보조적인 역할을 수행하는 스레드로 주 스레드가 종료되면 데몬 스레드 더는 존재 의미가 없기에 강제로 종료됩니다. 워드의 자동 저장 기능을 예로 들을 수 있습니다. 데몬 스레드를 만드는 방법은 스레드를 만들고 해당 스레드에 `setDaemon(true);` 메소드를 세팅하는 것입니다.
 
@@ -185,3 +186,25 @@ public static void main(String args[]){
     }
 }
 ```
+
+### 2.2 Thread 우선 순위
+
+#### 2.2.1 동시성과 병렬성
+
+멀티 스레드는 `동시성( Concurrency )` 또는 `병렬성( Parallelism )`으로 실행됩니다. 
+
+- `동시성`이랑 멀티작업을 위해 1개의 코어로 스레드마다 돌아가면서 조금씩 실행하지만, 너무 빨라 사람의 눈에 보기에는 독립적으로 돌아가는 것처럼 보이는 것을 말합니다.
+- `병렬성`이란 스레드마다 각각의 독립적인 Core가 할당되어 독립적인 Core에서 작업이 이루어지는 것을 말합니다. 
+
+코어의 수보다 스레드의 수가 작으면 각각의 코어로 병렬성이 보장되지만 스레드의 개수가 코어보다 많은 경우 스레드를 **어떤 순서에 의해 동시적으로 실행할 것인가를 결정**해 주어야 합니다. 이것을 `스레드 스케줄링`이라 합니다. 이런 **스케쥴링 방식**은 `우선순위( Priority )` 방식과 `순환 할당( Round-Robin )` 방식으로 나누어집니다.
+
+#### 2.2.2 우선순위( Priority ) 방식
+우선순위가 높은 스레드가 실행을 더 많이 하도록 스케줄링하는 방법입니다. thread.setPriority(1) // 1 - 우선순위가 가장 낮음 , 10 - 가장 높음 thread .setPriority(Thread.MAX_PRIORITY); // 직관적 코드 MAX_PRIORITY, NORM_PRIORITY, MIN_PRIORITY
+
+#### 2.2.3 순환 할당( Round-Robin ) 방식
+
+시간 할당량을 정해서 하나의 스레드를 정해진 시간만큼만 실행하는 방법입니다. 해당 방식은 JVM안에서 이루어지기 때문에 개발자가 제어할 수 없습니다.
+
+>[!note]
+>자바 동기화 관련해서 메소드에 설정할 수는 있으나 이 내용은 Java Monitor에서 계속하겠습니다.
+
