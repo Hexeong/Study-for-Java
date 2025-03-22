@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "e077b0a98aa410d1",
@@ -171,11 +170,11 @@
   },
   "active": "35b7504b320e168e",
   "lastOpenFiles": [
+    "Spring/5. Singleton Pattern.md",
+    "Spring/4. OOP 프레임워크.md",
     "Spring/3. Spring DispatcherServlet.md",
     "Spring Web/Spring MVC.md",
     "Spring Web/Layered Architecture.md",
-    "Spring/4. OOP 프레임워크.md",
-    "Spring/Singleton Pattern.md",
     "Spring/Spring AOP.md",
     "Spring/Spring Triangle.md",
     "Spring Web/Web Context.md",
